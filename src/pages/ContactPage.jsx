@@ -121,7 +121,7 @@ const ContactPage = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
-                      placeholder="your.email@example.com"
+                      placeholder="Enter your email"
                     />
                   </div>
 

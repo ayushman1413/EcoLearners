@@ -183,7 +183,7 @@ const AuthPage = () => {
                       ? "border-destructive focus:ring-destructive/50"
                       : "border-border focus:ring-primary/50"
                   }`}
-                  placeholder="your.email@example.com"
+                  placeholder="Enter your email"
                 />
               </div>
               {errors.email && <p className="mt-1 text-sm text-destructive">{errors.email}</p>}
