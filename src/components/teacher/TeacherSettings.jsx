@@ -8,8 +8,8 @@ const TeacherSettings = () => {
   const [isSaving, setIsSaving] = useState(false)
   const [settings, setSettings] = useState({
     // Profile Settings
-    name: "Dr. Sarah Wilson",
-    email: "sarah.wilson@school.edu",
+    name: "Ayush",
+    email: "ayush@school.edu",
     bio: "Environmental Science Teacher with 10+ years of experience in sustainability education.",
 
    

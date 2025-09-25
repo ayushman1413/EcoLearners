@@ -10,8 +10,8 @@ const TeacherStudents = () => {
   const students = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      email: "sarah.j@school.edu",
+      name: "Ayush",
+      email: "ayush@school.edu",
       avatar: "SJ",
       joinDate: "2024-01-15",
       progress: 85,

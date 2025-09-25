@@ -25,7 +25,7 @@ const StudentLeaderboard = () => {
     },
     {
       id: 2,
-      name: "Sarah Johnson",
+      name: "Ayush",
       avatar: "SJ",
       points: 2380,
       badges: 11,

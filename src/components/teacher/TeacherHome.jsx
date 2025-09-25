@@ -37,7 +37,7 @@ const TeacherHome = () => {
   const recentActivity = [
     {
       type: "quiz_completed",
-      student: "Sarah Johnson",
+      student: "Ayush",
       action: "completed Climate Change Quiz",
       score: "95%",
       time: "2 hours ago",
