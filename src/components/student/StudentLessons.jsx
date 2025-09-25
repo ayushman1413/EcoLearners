@@ -102,7 +102,10 @@ const StudentLessons = () => {
                 </div>
                 <p className="text-muted-foreground mb-4">{lesson.description}</p>
                 <div className="flex items-center justify-between">
-                  <button className="eco-button text-sm px-4 py-2 flex items-center space-x-2">
+                  <button
+                    className="eco-button text-sm px-4 py-2 flex items-center space-x-2"
+                    onClick={() => setViewingLesson(lesson)}
+                  >
                     <Play className="w-4 h-4" />
                     <span>Start Lesson</span>
                   </button>
