@@ -35,7 +35,7 @@ const StudentDashboard = () => {
     <div className="min-h-screen bg-background">
       <div className="flex">
         {/* Sidebar */}
-        <div className="w-64 bg-card border-r border-border min-h-screen sticky top-16">
+        <div className="fixed left-0 top-16 w-64 bg-card border-r border-border z-40" style={{ height: 'calc(100vh - 4rem)' }}>
           <div className="p-6">
             {/* User Info */}
             <div className="flex items-center space-x-3 mb-8">
@@ -80,7 +80,7 @@ const StudentDashboard = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-8">
+        <div className="ml-64 p-8">
           <Routes>
             <Route path="/" element={<StudentHome />} />
             <Route path="/lessons" element={<StudentLessons />} />
