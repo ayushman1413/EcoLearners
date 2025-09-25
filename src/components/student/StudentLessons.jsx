@@ -122,38 +122,51 @@ const StudentLessons = () => {
         ))}
       </div>
 
-      {/* Lesson Viewer */}
+      {/* Lesson Viewer Modal */}
       {viewingLesson && (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="eco-card p-6 mt-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
+          onClick={() => setViewingLesson(null)}
         >
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h2 className="text-2xl font-bold text-foreground">{viewingLesson.title}</h2>
-              <p className="text-muted-foreground">{viewingLesson.description}</p>
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="bg-card rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-2xl font-bold text-foreground">{viewingLesson.title}</h2>
+                  <p className="text-muted-foreground">{viewingLesson.description}</p>
+                </div>
+                <button
+                  onClick={() => setViewingLesson(null)}
+                  className="p-2 hover:bg-muted/50 rounded-lg transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <div
+                className="prose prose-sm max-w-none text-foreground"
+                dangerouslySetInnerHTML={{ __html: viewingLesson.content }}
+              />
+              <div className="mt-6 flex justify-end">
+                <button
+                  onClick={() => setViewingLesson(null)}
+                  className="eco-button px-6 py-2"
+                >
+                  Close Lesson
+                </button>
+              </div>
             </div>
-            <button
-              onClick={() => setViewingLesson(null)}
-              className="p-2 hover:bg-muted/50 rounded-lg transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
-          <div
-            className="prose prose-sm max-w-none text-foreground"
-            dangerouslySetInnerHTML={{ __html: viewingLesson.content }}
-          />
-          <div className="mt-6 flex justify-end">
-            <button
-              onClick={() => setViewingLesson(null)}
-              className="eco-button px-6 py-2"
-            >
-              Close Lesson
-            </button>
-          </div>
+          </motion.div>
         </motion.div>
       )}
     </div>
