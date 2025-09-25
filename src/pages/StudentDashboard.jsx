@@ -33,7 +33,7 @@ const StudentDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="flex">
+      <div>
         {/* Sidebar */}
         <div className="fixed left-0 top-16 w-64 bg-card border-r border-border z-40" style={{ height: 'calc(100vh - 4rem)' }}>
           <div className="p-6">
