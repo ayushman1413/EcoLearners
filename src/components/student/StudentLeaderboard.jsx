@@ -13,8 +13,8 @@ const StudentLeaderboard = () => {
   const leaderboardData = [
     {
       id: 1,
-      name: "Emma Davis",
-      avatar: "ED",
+      name: "Priya Sharma",
+      avatar: "PS",
       points: 2450,
       badges: 12,
       lessonsCompleted: 18,
@@ -37,8 +37,8 @@ const StudentLeaderboard = () => {
     },
     {
       id: 3,
-      name: "Mike Chen",
-      avatar: "MC",
+      name: "Rahul Kumar",
+      avatar: "RK",
       points: 2290,
       badges: 10,
       lessonsCompleted: 15,
@@ -49,8 +49,8 @@ const StudentLeaderboard = () => {
     },
     {
       id: 4,
-      name: "Alex Rodriguez",
-      avatar: "AR",
+      name: "Arjun Patel",
+      avatar: "AP",
       points: 2150,
       badges: 9,
       lessonsCompleted: 14,
@@ -61,8 +61,8 @@ const StudentLeaderboard = () => {
     },
     {
       id: 5,
-      name: "Lisa Wang",
-      avatar: "LW",
+      name: "Kavya Singh",
+      avatar: "KS",
       points: 2080,
       badges: 8,
       lessonsCompleted: 13,
@@ -73,8 +73,8 @@ const StudentLeaderboard = () => {
     },
     {
       id: 6,
-      name: "David Kim",
-      avatar: "DK",
+      name: "Karan Gupta",
+      avatar: "KG",
       points: 1950,
       badges: 7,
       lessonsCompleted: 12,

@@ -57,10 +57,10 @@ const TeacherAnalytics = () => {
   ]
 
   const topPerformers = [
-    { name: "Sarah Johnson", score: 96, lessons: 15, badges: 8 },
-    { name: "Emma Davis", score: 94, lessons: 14, badges: 7 },
-    { name: "Mike Chen", score: 89, lessons: 12, badges: 6 },
-    { name: "Alex Rodriguez", score: 85, lessons: 10, badges: 5 },
+    { name: "Sneha Verma", score: 96, lessons: 15, badges: 8 },
+    { name: "Priya Sharma", score: 94, lessons: 14, badges: 7 },
+    { name: "Rahul Kumar", score: 89, lessons: 12, badges: 6 },
+    { name: "Arjun Patel", score: 85, lessons: 10, badges: 5 },
   ]
 
   return (

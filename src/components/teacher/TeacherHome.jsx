@@ -45,14 +45,14 @@ const TeacherHome = () => {
     },
     {
       type: "lesson_started",
-      student: "Mike Chen",
+      student: "Rahul Kumar",
       action: "started Renewable Energy lesson",
       time: "4 hours ago",
       status: "in_progress",
     },
     {
       type: "quiz_completed",
-      student: "Emma Davis",
+      student: "Priya Sharma",
       action: "completed Water Conservation Quiz",
       score: "78%",
       time: "6 hours ago",
@@ -60,7 +60,7 @@ const TeacherHome = () => {
     },
     {
       type: "help_needed",
-      student: "Alex Rodriguez",
+      student: "Arjun Patel",
       action: "requested help with Biodiversity lesson",
       time: "1 day ago",
       status: "needs_attention",
