@@ -4,7 +4,8 @@ import { Trophy, Medal, Award, Crown, TrendingUp, ArrowLeft } from "lucide-react
 import { Link } from "react-router-dom"
 
 const LeaderboardPage = () => {
-  // Mock global leaderboard data
+ 
+  
   const globalLeaderboard = [
     {
       id: 1,

@@ -9,7 +9,7 @@ const StudentLeaderboard = () => {
   const [selectedPeriod, setSelectedPeriod] = useState("all-time")
   const [selectedCategory, setSelectedCategory] = useState("overall")
 
-  // Mock leaderboard data
+
   const leaderboardData = [
     {
       id: 1,

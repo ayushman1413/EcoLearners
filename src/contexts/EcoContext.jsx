@@ -13,7 +13,8 @@ export const useEco = () => {
 }
 
 export const EcoProvider = ({ children }) => {
-  // Mock data for lessons
+ 
+
   const [lessons] = useState([
     {
       id: 1,
@@ -38,7 +39,8 @@ export const EcoProvider = ({ children }) => {
     },
   ])
 
-  // Mock quiz data
+ 
+  
   const [quizzes] = useState([
     {
       id: 1,
@@ -63,7 +65,8 @@ export const EcoProvider = ({ children }) => {
     },
   ])
 
-  // Mock leaderboard data
+ 
+
   const [leaderboard] = useState([
     { id: 1, name: "Ankit Sharma", points: 450, rank: 1 },
     { id: 2, name: "Maya Patel", points: 380, rank: 2 },
@@ -72,7 +75,8 @@ export const EcoProvider = ({ children }) => {
     { id: 5, name: "Dheeraj Gupta", points: 250, rank: 5 },
   ])
 
-  // Mock badges
+ 
+
   const [badges] = useState([
     {
       id: 1,

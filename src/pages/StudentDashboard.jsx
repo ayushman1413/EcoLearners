@@ -3,7 +3,7 @@ import { Routes, Route, Link, useLocation } from "react-router-dom"
 import { Home, BookOpen, Brain, Leaf, FileText, Award, User } from "lucide-react"
 import { useAuth } from "../contexts/AuthContext"
 
-// Student Dashboard Pages
+
 import StudentHome from "../components/student/StudentHome"
 import StudentLessons from "../components/student/StudentLessons"
 import StudentQuizzes from "../components/student/StudentQuizzes"

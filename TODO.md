@@ -1,4 +1,0 @@
-- [ ] Optimize icon rendering in TeacherDashboard.jsx by memoizing Icon components
-- [ ] Adjust framer-motion animation settings to reduce flickering
-- [ ] Ensure sidebarOpen state toggle is stable
-- [ ] Test the changes to confirm flickering is fixed

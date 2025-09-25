@@ -3,7 +3,7 @@ import { AuthProvider } from "./contexts/AuthContext"
 import { EcoProvider } from "./contexts/EcoContext"
 import Layout from "./components/Layout"
 
-// Import pages
+
 import LandingPage from "./pages/LandingPage"
 import AuthPage from "./pages/AuthPage"
 import StudentDashboard from "./pages/StudentDashboard"
@@ -13,7 +13,7 @@ import AboutPage from "./pages/AboutPage"
 import ContactPage from "./pages/ContactPage"
 import NotFoundPage from "./pages/NotFoundPage"
 
-// Protected Route Component
+
 import ProtectedRoute from "./components/ProtectedRoute"
 
 const App = () => {
@@ -23,14 +23,14 @@ const App = () => {
         <Router>
           <Layout>
             <Routes>
-              {/* Public Routes */}
+              {/* Routes */}
               <Route path="/" element={<LandingPage />} />
               <Route path="/auth" element={<AuthPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/leaderboard" element={<LeaderboardPage />} />
 
-              {/* Protected Routes */}
+              {/*  Routes */}
               <Route
                 path="/student/*"
                 element={
@@ -48,7 +48,7 @@ const App = () => {
                 }
               />
 
-              {/* 404 Route */}
+              {/* Route */}
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Layout>

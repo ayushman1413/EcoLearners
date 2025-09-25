@@ -7,7 +7,8 @@ const TeacherSettings = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [isSaving, setIsSaving] = useState(false)
   const [settings, setSettings] = useState({
-    // Profile Settings
+
+
     name: "Ayush",
     email: "ayush@school.edu",
     bio: "Environmental Science Teacher with 10+ years of experience in sustainability education.",
@@ -43,10 +44,10 @@ const TeacherSettings = () => {
 
   const handleSave = () => {
     setIsSaving(true)
-    // Save settings to localStorage
+    
     localStorage.setItem('teacherSettings', JSON.stringify(settings))
     console.log("Settings saved:", settings)
-    // Simulate save delay
+  
     setTimeout(() => {
       setIsSaving(false)
     }, 1000)

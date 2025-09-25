@@ -8,7 +8,7 @@ const NotFoundPage = () => {
     <div className="min-h-screen flex items-center justify-center py-20">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          {/* Eco-friendly 404 illustration */}
+          {/* Eco-friendly  */}
           <div className="mb-8">
             <motion.div
               animate={{ rotate: [0, 10, -10, 0] }}
