@@ -65,11 +65,11 @@ export const EcoProvider = ({ children }) => {
 
   // Mock leaderboard data
   const [leaderboard] = useState([
-    { id: 1, name: "Alex Green", points: 450, rank: 1 },
+    { id: 1, name: "Ankit Green", points: 450, rank: 1 },
     { id: 2, name: "Maya Earth", points: 380, rank: 2 },
     { id: 3, name: "Sam Nature", points: 320, rank: 3 },
-    { id: 4, name: "Jordan Eco", points: 280, rank: 4 },
-    { id: 5, name: "Casey Planet", points: 250, rank: 5 },
+    { id: 4, name: "Ashu Eco", points: 280, rank: 4 },
+    { id: 5, name: "Dheeraj Planet", points: 250, rank: 5 },
   ])
 
   // Mock badges

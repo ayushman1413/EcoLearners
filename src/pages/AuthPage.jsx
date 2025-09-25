@@ -63,23 +63,21 @@ const AuthPage = () => {
 
     setIsLoading(true)
 
-    try {
-      let result
-      if (isLogin) {
-        result = login(formData.email, formData.password, selectedRole)
-      } else {
-        result = signup(formData.email, formData.password, selectedRole)
-      }
-
-      if (result.success) {
-        // Redirect based on role
-        navigate(selectedRole === "student" ? "/student" : "/teacher")
-      }
-    } catch (error) {
-      setErrors({ general: "Authentication failed. Please try again." })
-    } finally {
-      setIsLoading(false)
+    let result
+    if (isLogin) {
+      result = login(formData.email, formData.password, selectedRole)
+    } else {
+      result = signup(formData.email, formData.password, selectedRole)
     }
+
+    if (result.success) {
+      // Redirect based on role
+      navigate(selectedRole === "student" ? "/student" : "/teacher")
+    } else {
+      setErrors({ general: result.error || "Authentication failed. Please try again." })
+    }
+
+    setIsLoading(false)
   }
 
   const toggleAuthMode = () => {
@@ -289,10 +287,10 @@ const AuthPage = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="eco-card p-4 bg-muted/50"
         >
-          <h4 className="text-sm font-medium text-foreground mb-2">Demo Credentials:</h4>
+          <h4 className="text-sm font-medium text-foreground mb-2">Demo ke liye isko use kre :</h4>
           <div className="text-xs text-muted-foreground space-y-1">
-            <p>Student: student@demo.com / password123</p>
-            <p>Teacher: teacher@demo.com / password123</p>
+            <p>Student: ayush123@gmail.com / password123</p>
+            <p>Teacher: ankit123@gmail.com / password123</p>
           </div>
         </motion.div>
       </div>

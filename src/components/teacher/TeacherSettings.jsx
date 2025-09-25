@@ -1,31 +1,38 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { User, Lock, Bell, Palette, Shield, Save, Eye, EyeOff } from "lucide-react"
 
 const TeacherSettings = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const [isSaving, setIsSaving] = useState(false)
   const [settings, setSettings] = useState({
     // Profile Settings
     name: "Dr. Sarah Wilson",
     email: "sarah.wilson@school.edu",
     bio: "Environmental Science Teacher with 10+ years of experience in sustainability education.",
 
-    // Notification Settings
+   
     emailNotifications: true,
     studentSubmissions: true,
     weeklyReports: true,
     systemUpdates: false,
 
-    // Privacy Settings
     profileVisibility: "students",
     showEmail: false,
     allowMessages: true,
 
-    // Appearance Settings
+    
     theme: "light",
     language: "english",
   })
+
+  useEffect(() => {
+    const savedSettings = localStorage.getItem('teacherSettings')
+    if (savedSettings) {
+      setSettings(JSON.parse(savedSettings))
+    }
+  }, [])
 
   const handleInputChange = (field, value) => {
     setSettings((prev) => ({
@@ -35,8 +42,14 @@ const TeacherSettings = () => {
   }
 
   const handleSave = () => {
-    // Save settings logic here
+    setIsSaving(true)
+    // Save settings to localStorage
+    localStorage.setItem('teacherSettings', JSON.stringify(settings))
     console.log("Settings saved:", settings)
+    // Simulate save delay
+    setTimeout(() => {
+      setIsSaving(false)
+    }, 1000)
   }
 
   return (
@@ -311,10 +324,11 @@ const TeacherSettings = () => {
       >
         <button
           onClick={handleSave}
-          className="flex items-center space-x-2 px-6 py-3 bg-eco-leaf text-white rounded-lg hover:bg-eco-leaf/90 transition-colors"
+          disabled={isSaving}
+          className="flex items-center space-x-2 px-6 py-3 bg-eco-leaf text-white rounded-lg hover:bg-eco-leaf/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <Save className="w-4 h-4" />
-          <span>Save Changes</span>
+          <span>{isSaving ? "Saving..." : "Save Changes"}</span>
         </button>
       </motion.div>
     </div>
