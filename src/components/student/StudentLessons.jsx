@@ -121,6 +121,41 @@ const StudentLessons = () => {
           </motion.div>
         ))}
       </div>
+
+      {/* Lesson Viewer */}
+      {viewingLesson && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="eco-card p-6 mt-8"
+        >
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h2 className="text-2xl font-bold text-foreground">{viewingLesson.title}</h2>
+              <p className="text-muted-foreground">{viewingLesson.description}</p>
+            </div>
+            <button
+              onClick={() => setViewingLesson(null)}
+              className="p-2 hover:bg-muted/50 rounded-lg transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+          <div
+            className="prose prose-sm max-w-none text-foreground"
+            dangerouslySetInnerHTML={{ __html: viewingLesson.content }}
+          />
+          <div className="mt-6 flex justify-end">
+            <button
+              onClick={() => setViewingLesson(null)}
+              className="eco-button px-6 py-2"
+            >
+              Close Lesson
+            </button>
+          </div>
+        </motion.div>
+      )}
     </div>
   )
 }
