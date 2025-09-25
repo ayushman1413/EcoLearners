@@ -1,10 +1,12 @@
 "use client"
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { BookOpen, Clock, BarChart3, Play, CheckCircle } from "lucide-react"
+import { BookOpen, Clock, BarChart3, Play, CheckCircle, X } from "lucide-react"
 import { useEco } from "../../contexts/EcoContext"
 
 const StudentLessons = () => {
   const { lessons } = useEco()
+  const [viewingLesson, setViewingLesson] = useState(null)
 
   const getDifficultyColor = (difficulty) => {
     switch (difficulty.toLowerCase()) {
