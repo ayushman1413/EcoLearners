@@ -1,43 +1,32 @@
-# EcoLearners Debugging and Running Tasks
+# Convert Project to Only React.js
 
-## Completed Tasks ✅
+## Tasks to Complete
 
-### 1. Dependencies Installation
-- ✅ Installed all npm dependencies for the client application
-- ✅ Resolved missing dependencies issue
+### 1. Remove Next.js Files
+- [ ] Remove next.config.mjs
+- [ ] Remove app/ directory
+- [ ] Remove tsconfig.json
+- [ ] Remove components/ directory
+- [ ] Remove hooks/ directory
+- [ ] Remove lib/ directory
+- [ ] Remove styles/ directory
+- [ ] Remove pnpm-lock.yaml
+- [ ] Remove components.json
+- [ ] Remove AAA github
 
-### 2. PostCSS Configuration Fix
-- ✅ Fixed PostCSS configuration by installing `@tailwindcss/postcss`
-- ✅ Updated `postcss.config.mjs` to use correct Tailwind CSS v4 configuration
-- ✅ Moved PostCSS config to client directory where it's needed
+### 2. Move React App to Root
+- [ ] Move client/src/ to src/
+- [ ] Move client/index.html to root
+- [ ] Move client/vite.config.js to root
+- [ ] Move client/postcss.config.mjs to root
+- [ ] Move client/eslint.config.js to root
+- [ ] Replace package.json with client/package.json
+- [ ] Move client/package-lock.json to root
 
-### 3. Development Server Setup
-- ✅ Successfully started Vite development server
-- ✅ Server running on http://localhost:5174/
-- ✅ No more PostCSS loading errors
+### 3. Clean Up
+- [ ] Remove client/ directory
 
-### 4. Code Analysis
-- ✅ Verified React Router setup and routing configuration
-- ✅ Confirmed authentication context and eco context are properly configured
-- ✅ Validated component structure and imports
-- ✅ Checked CSS and styling configurations
-
-## Current Status
-🎉 **Application is now running successfully!**
-
-- **Local URL**: http://localhost:5173/
-- **Status**: Development server active and ready
-- **Navigation**: All routes should work properly now
-- **Authentication**: Mock authentication system is functional
-
-## Next Steps (Optional)
-- Test navigation between pages
-- Verify authentication flow
-- Check responsive design
-- Test all interactive features
-
-## Notes
-- The application uses mock authentication for demo purposes
-- All routes are properly configured with React Router
-- Tailwind CSS v4 is working with the Vite plugin
-- Framer Motion animations are available
+### 4. Install and Run
+- [ ] Run npm install
+- [ ] Run npm run dev
+- [ ] Debug app using browser (check console errors, test functionality)
