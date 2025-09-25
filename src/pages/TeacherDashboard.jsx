@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useCallback } from "react"
 import { motion } from "framer-motion"
 import { Home, Users, BookOpen, FileText, BarChart3, Settings, LogOut, Menu, X } from "lucide-react"
 import { useAuth } from "../contexts/AuthContext"
@@ -14,6 +14,8 @@ const TeacherDashboard = () => {
   const [activeTab, setActiveTab] = useState("home")
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const { user, logout } = useAuth()
+
+  const toggleSidebar = useCallback(() => setSidebarOpen(prev => !prev), [])
 
   const menuItems = [
     { id: "home", label: "Dashboard", icon: Home },
@@ -114,8 +116,8 @@ const TeacherDashboard = () => {
       </div>
 
       {/* Mobile Menu Button */}
-      <div className="lg:hidden fixed top-4 left-4 z-50">
-        <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 bg-card rounded-lg shadow-lg border">
+      <div className="lg:hidden fixed top-20 right-4 z-50">
+        <button onClick={toggleSidebar} className="p-2 bg-card rounded-lg shadow-lg border">
           {sidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
@@ -126,7 +128,7 @@ const TeacherDashboard = () => {
         animate={{
           x: sidebarOpen ? 0 : -320,
         }}
-        transition={{ duration: 0.3 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
         className="fixed top-16 left-0 h-[calc(100vh-4rem)] w-80 bg-card border-r border-border z-50 lg:hidden"
       >
         <div className="p-6 h-full">{sidebarContent}</div>
