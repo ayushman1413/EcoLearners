@@ -282,6 +282,121 @@ export const EcoProvider = ({ children }) => {
 
  
 
+  const [tests] = useState([
+    {
+      id: 1,
+      title: "Climate Change Assessment",
+      questions: [
+        {
+          question: "What is the primary greenhouse gas responsible for climate change?",
+          options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+          correct: 1,
+        },
+        {
+          question: "How much has Earth's average temperature risen since the late 19th century?",
+          options: ["0.5°C", "1.1°C", "2.5°C", "5°C"],
+          correct: 1,
+        },
+        {
+          question: "Which human activity contributes most to greenhouse gas emissions?",
+          options: ["Recycling", "Burning fossil fuels", "Planting trees", "Using solar panels"],
+          correct: 1,
+        },
+        {
+          question: "What is the greenhouse effect?",
+          options: ["A cooling process", "Warming of Earth's surface by greenhouse gases", "A type of storm", "Ocean evaporation"],
+          correct: 1,
+        },
+        {
+          question: "Which of these is NOT a greenhouse gas?",
+          options: ["Carbon dioxide", "Methane", "Nitrous oxide", "Oxygen"],
+          correct: 3,
+        },
+        {
+          question: "What percentage of global greenhouse gas emissions come from burning fossil fuels?",
+          options: ["25%", "50%", "75%", "90%"],
+          correct: 2,
+        },
+        {
+          question: "How does deforestation contribute to climate change?",
+          options: ["Increases oxygen", "Releases stored carbon", "Reduces water vapor", "Creates shade"],
+          correct: 1,
+        },
+        {
+          question: "Which region is warming twice as fast as the global average?",
+          options: ["Equator", "Tropics", "Arctic", "Pacific Ocean"],
+          correct: 2,
+        },
+        {
+          question: "What is causing sea levels to rise?",
+          options: ["Increased rainfall", "Melting ice sheets", "Ocean currents", "Volcanic activity"],
+          correct: 1,
+        },
+        {
+          question: "Which renewable energy source converts sunlight into electricity?",
+          options: ["Wind turbines", "Solar panels", "Hydroelectric dams", "Geothermal plants"],
+          correct: 1,
+        },
+      ],
+    },
+    {
+      id: 2,
+      title: "Renewable Energy Exam",
+      questions: [
+        {
+          question: "What is the most abundant renewable energy source on Earth?",
+          options: ["Wind", "Solar", "Hydroelectric", "Geothermal"],
+          correct: 1,
+        },
+        {
+          question: "Which type of solar panel technology is most efficient?",
+          options: ["Monocrystalline", "Polycrystalline", "Thin-film", "All are equally efficient"],
+          correct: 0,
+        },
+        {
+          question: "What does a wind turbine convert into electricity?",
+          options: ["Solar energy", "Kinetic energy of wind", "Thermal energy", "Chemical energy"],
+          correct: 1,
+        },
+        {
+          question: "Which renewable energy source uses the heat from Earth's core?",
+          options: ["Solar", "Wind", "Geothermal", "Biomass"],
+          correct: 2,
+        },
+        {
+          question: "What is the main advantage of hydroelectric power?",
+          options: ["Low cost", "Reliable and consistent", "Easy to install anywhere", "No environmental impact"],
+          correct: 1,
+        },
+        {
+          question: "Which country leads in wind power generation?",
+          options: ["United States", "China", "Germany", "Denmark"],
+          correct: 1,
+        },
+        {
+          question: "What is biomass energy derived from?",
+          options: ["Rocks and minerals", "Organic matter", "Ocean waves", "Atmospheric gases"],
+          correct: 1,
+        },
+        {
+          question: "Which renewable energy source can provide baseload power?",
+          options: ["Solar PV", "Wind", "Geothermal", "All of the above"],
+          correct: 2,
+        },
+        {
+          question: "What is the primary challenge with solar energy?",
+          options: ["Too expensive", "Intermittent nature", "Requires large land areas", "Pollutes the environment"],
+          correct: 1,
+        },
+        {
+          question: "Which technology stores excess renewable energy for later use?",
+          options: ["Batteries", "Capacitors", "Flywheels", "All of the above"],
+          correct: 3,
+        },
+      ],
+    },
+  ])
+
   const [badges] = useState([
     {
       id: 1,
@@ -316,6 +431,7 @@ export const EcoProvider = ({ children }) => {
   const value = {
     lessons,
     quizzes,
+    tests,
     leaderboard,
     badges,
   }

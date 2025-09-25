@@ -1,11 +1,12 @@
-# TODO: Add Climate Change Basics Lessons and Questions
+# TODO: Implement Test-Taking Functionality in StudentTests
 
 ## Tasks
-- [x] Update src/contexts/EcoContext.jsx: Add detailed content to "Climate Change Basics", add new lessons ("Causes", "Effects", "Solutions"), expand quiz with more questions, add lessonContent field.
-- [x] Update src/components/student/StudentLessons.jsx: Add state for viewing lesson, implement onClick for "Start Lesson" to display content.
-- [x] Update src/components/teacher/TeacherLessons.jsx: Add new lesson entries to teacher's list.
-- [x] Test the application: Start lessons, complete quizzes, verify display.
-
-## Progress
-- Started: [Date/Time]
-- Completed: EcoContext updated with new lessons and quizzes, StudentLessons updated with lesson viewer, TeacherLessons updated with new entries.
+- [x] Add tests array to EcoContext.jsx with sample test data
+- [ ] Update StudentTests.jsx to import useEco and use tests from context
+- [ ] Add state variables in StudentTests: selectedTest, currentQuestion, selectedAnswers, showResults, score
+- [ ] Implement handleStartTest function to initialize test state
+- [ ] Add conditional rendering for test interface when selectedTest is active
+- [ ] Implement test question interface with progress bar and answer selection
+- [ ] Implement results screen with score display and retake option
+- [ ] Update "Start Test" button to call handleStartTest
+- [ ] Test the complete test-taking flow
