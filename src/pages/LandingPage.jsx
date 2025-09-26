@@ -105,30 +105,36 @@ const LandingPage = () => {
               <div className="flex justify-center items-center space-x-8 mb-8">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                  animate={{ opacity: 1, scale: 1, rotate: 360 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.6,
+                    rotate: { duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }
+                  }}
                   className="w-16 h-16 bg-eco-leaf/20 rounded-full flex items-center justify-center"
                 >
                   <Leaf className="w-8 h-8 text-eco-leaf" />
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  animate={{ y: [-10, 10, -10] }}
-                  transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+                  animate={{ opacity: 1, scale: 1, y: [-10, 10, -10] }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.8,
+                    y: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }
+                  }}
                   className="w-16 h-16 bg-eco-sky/20 rounded-full flex items-center justify-center"
                 >
                   <Globe className="w-8 h-8 text-eco-sky" />
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 1.0 }}
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                  animate={{ opacity: 1, scale: 1, rotate: -360 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 1.0,
+                    rotate: { duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "linear" }
+                  }}
                   className="w-16 h-16 bg-eco-sun/20 rounded-full flex items-center justify-center"
                 >
                   <Sun className="w-8 h-8 text-eco-sun" />
