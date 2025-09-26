@@ -11,6 +11,7 @@ import TeacherDashboard from "./pages/TeacherDashboard"
 import LeaderboardPage from "./pages/LeaderboardPage"
 import AboutPage from "./pages/AboutPage"
 import ContactPage from "./pages/ContactPage"
+import HelpPage from "./pages/HelpPage"
 import NotFoundPage from "./pages/NotFoundPage"
 
 

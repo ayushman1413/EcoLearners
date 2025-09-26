@@ -157,21 +157,39 @@ const LandingPage = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">The Challenge We Face</h2>
-              <div className="space-y-4">
+              <motion.ul
+                className="space-y-4"
+                variants={{
+                  animate: {
+                    transition: {
+                      staggerChildren: 0.1,
+                    },
+                  },
+                }}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+              >
                 {problems.map((problem, index) => (
-                  <motion.div
+                  <motion.li
                     key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
+                    variants={{
+                      initial: { opacity: 0, x: -20 },
+                      animate: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.6 }}
                     className="flex items-start space-x-3"
                   >
-                    <div className="w-2 h-2 bg-destructive rounded-full mt-3 flex-shrink-0"></div>
+                    <motion.div
+                      whileInView={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      viewport={{ once: true }}
+                      className="w-2 h-2 bg-destructive rounded-full mt-3 flex-shrink-0"
+                    ></motion.div>
                     <p className="text-muted-foreground text-lg">{problem}</p>
-                  </motion.div>
+                  </motion.li>
                 ))}
-              </div>
+              </motion.ul>
             </motion.div>
 
             {/* Solution */}
@@ -182,21 +200,40 @@ const LandingPage = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Our Solution</h2>
-              <div className="space-y-4">
+              <motion.ul
+                className="space-y-4"
+                variants={{
+                  animate: {
+                    transition: {
+                      staggerChildren: 0.1,
+                    },
+                  },
+                }}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+              >
                 {solutions.map((solution, index) => (
-                  <motion.div
+                  <motion.li
                     key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
+                    variants={{
+                      initial: { opacity: 0, x: 20 },
+                      animate: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.6 }}
                     className="flex items-start space-x-3"
                   >
-                    <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                    <motion.div
+                      whileInView={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      viewport={{ once: true }}
+                    >
+                      <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                    </motion.div>
                     <p className="text-muted-foreground text-lg">{solution}</p>
-                  </motion.div>
+                  </motion.li>
                 ))}
-              </div>
+              </motion.ul>
             </motion.div>
           </div>
         </div>
@@ -221,24 +258,42 @@ const LandingPage = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={{
+              animate: {
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                variants={{
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.05 }}
                 className="eco-card p-6 group hover:scale-105 transition-transform"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <motion.div
+                  whileHover={{ rotate: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
+                >
                   <feature.icon className="w-6 h-6 text-primary" />
-                </div>
+                </motion.div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -256,7 +311,13 @@ const LandingPage = () => {
               Join thousands of learners who are already making an impact. Start your environmental education journey
               today.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
               <Link to="/auth" className="eco-button text-lg px-8 py-4 flex items-center justify-center space-x-2">
                 <span>Start Learning Now</span>
                 <ArrowRight className="w-5 h-5" />
@@ -267,7 +328,7 @@ const LandingPage = () => {
               >
                 View Leaderboard
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
