@@ -59,9 +59,14 @@ const LandingPage = () => {
               transition={{ duration: 0.6 }}
               className="mb-8"
             >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance">
+              <motion.h1
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance"
+              >
                 Learn. Act. <span className="text-primary">Save the Planet</span>
-              </h1>
+              </motion.h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto text-pretty">
                 Join EcoLearn's gamified platform for environmental education. Make learning fun while building a
                 sustainable future together.
@@ -74,16 +79,20 @@ const LandingPage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
             >
-              <Link to="/auth" className="group eco-button text-lg px-8 py-4 flex items-center space-x-2">
-                <span>Get Started</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/about"
-                className="text-muted-foreground hover:text-foreground transition-colors text-lg px-8 py-4"
-              >
-                Learn More
-              </Link>
+              <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+                <Link to="/auth" className="group eco-button text-lg px-8 py-4 flex items-center space-x-2">
+                  <span>Get Started</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+                <Link
+                  to="/about"
+                  className="text-muted-foreground hover:text-foreground transition-colors text-lg px-8 py-4"
+                >
+                  Learn More
+                </Link>
+              </motion.div>
             </motion.div>
 
             {/* Hero Visual Elements */}
@@ -93,8 +102,24 @@ const LandingPage = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative"
             >
-              <div className="flex justify-center items-center space-x-8 mb-8">
+              <motion.div
+                className="flex justify-center items-center space-x-8 mb-8"
+                variants={{
+                  animate: {
+                    transition: {
+                      staggerChildren: 0.2,
+                    },
+                  },
+                }}
+                initial="initial"
+                animate="animate"
+              >
                 <motion.div
+                  variants={{
+                    initial: { opacity: 0, scale: 0.8 },
+                    animate: { opacity: 1, scale: 1 },
+                  }}
+                  transition={{ duration: 0.6 }}
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                   className="w-16 h-16 bg-eco-leaf/20 rounded-full flex items-center justify-center"
@@ -102,6 +127,11 @@ const LandingPage = () => {
                   <Leaf className="w-8 h-8 text-eco-leaf" />
                 </motion.div>
                 <motion.div
+                  variants={{
+                    initial: { opacity: 0, scale: 0.8 },
+                    animate: { opacity: 1, scale: 1 },
+                  }}
+                  transition={{ duration: 0.6 }}
                   animate={{ y: [-10, 10, -10] }}
                   transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
                   className="w-16 h-16 bg-eco-sky/20 rounded-full flex items-center justify-center"
@@ -109,13 +139,18 @@ const LandingPage = () => {
                   <Globe className="w-8 h-8 text-eco-sky" />
                 </motion.div>
                 <motion.div
+                  variants={{
+                    initial: { opacity: 0, scale: 0.8 },
+                    animate: { opacity: 1, scale: 1 },
+                  }}
+                  transition={{ duration: 0.6 }}
                   animate={{ rotate: -360 }}
                   transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                   className="w-16 h-16 bg-eco-sun/20 rounded-full flex items-center justify-center"
                 >
                   <Sun className="w-8 h-8 text-eco-sun" />
                 </motion.div>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
