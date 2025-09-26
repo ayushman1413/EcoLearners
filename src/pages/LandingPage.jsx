@@ -102,24 +102,11 @@ const LandingPage = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative"
             >
-              <motion.div
-                className="flex justify-center items-center space-x-8 mb-8"
-                variants={{
-                  animate: {
-                    transition: {
-                      staggerChildren: 0.2,
-                    },
-                  },
-                }}
-                initial="initial"
-                animate="animate"
-              >
+              <div className="flex justify-center items-center space-x-8 mb-8">
                 <motion.div
-                  variants={{
-                    initial: { opacity: 0, scale: 0.8 },
-                    animate: { opacity: 1, scale: 1 },
-                  }}
-                  transition={{ duration: 0.6 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                   className="w-16 h-16 bg-eco-leaf/20 rounded-full flex items-center justify-center"
@@ -127,11 +114,9 @@ const LandingPage = () => {
                   <Leaf className="w-8 h-8 text-eco-leaf" />
                 </motion.div>
                 <motion.div
-                  variants={{
-                    initial: { opacity: 0, scale: 0.8 },
-                    animate: { opacity: 1, scale: 1 },
-                  }}
-                  transition={{ duration: 0.6 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
                   animate={{ y: [-10, 10, -10] }}
                   transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
                   className="w-16 h-16 bg-eco-sky/20 rounded-full flex items-center justify-center"
@@ -139,18 +124,16 @@ const LandingPage = () => {
                   <Globe className="w-8 h-8 text-eco-sky" />
                 </motion.div>
                 <motion.div
-                  variants={{
-                    initial: { opacity: 0, scale: 0.8 },
-                    animate: { opacity: 1, scale: 1 },
-                  }}
-                  transition={{ duration: 0.6 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 1.0 }}
                   animate={{ rotate: -360 }}
                   transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                   className="w-16 h-16 bg-eco-sun/20 rounded-full flex items-center justify-center"
                 >
                   <Sun className="w-8 h-8 text-eco-sun" />
                 </motion.div>
-              </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
