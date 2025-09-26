@@ -87,7 +87,7 @@ const StudentHome = () => {
     {
       name: "Alex Chen",
       role: "Top Student",
-      content: "EcoLearn made learning about the environment so much fun! I've learned more in a month than I did in a year of school.",
+      content: "EcoLearners made learning about the environment so much fun! I've learned more in a month than I did in a year of school.",
       rating: 5,
       avatar: "AC",
     },

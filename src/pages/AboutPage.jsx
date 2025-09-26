@@ -39,7 +39,7 @@ const AboutPage = () => {
               <Leaf className="w-8 h-8 text-primary" />
             </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">About EcoLearn</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">About EcoLearners</h1>
           <p className="text-xl text-muted-foreground text-pretty">
             Empowering the next generation of environmental stewards through innovative education and community-driven
             action.
@@ -56,7 +56,7 @@ const AboutPage = () => {
           <h2 className="text-2xl font-bold text-foreground mb-4">Our Story</h2>
           <div className="space-y-4 text-muted-foreground">
             <p>
-              EcoLearn was born from the recognition that traditional environmental education often fails to engage
+              EcoLearners was born from the recognition that traditional environmental education often fails to engage
               learners and inspire real-world action. We believe that learning about our planet should be as exciting as
               it is important.
             </p>
@@ -101,7 +101,7 @@ const AboutPage = () => {
         >
           <h2 className="text-2xl font-bold text-foreground mb-4">Smart India Hackathon Project</h2>
           <p className="text-muted-foreground mb-4">
-            EcoLearn is proudly developed as part of the Smart India Hackathon, India's premier innovation challenge
+            EcoLearners is proudly developed as part of the Smart India Hackathon, India's premier innovation challenge
             that brings together the brightest minds to solve real-world problems through technology.
           </p>
           <p className="text-muted-foreground">

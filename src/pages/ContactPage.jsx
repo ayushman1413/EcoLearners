@@ -60,7 +60,7 @@ const ContactPage = () => {
             <h2 className="text-2xl font-bold text-foreground mb-6">Let's Start a Conversation</h2>
             <div className="space-y-6">
               <p className="text-muted-foreground">
-                Whether you're an educator looking to integrate EcoLearn into your curriculum, a student with feedback,
+                Whether you're an educator looking to integrate EcoLearners into your curriculum, a student with feedback,
                 or an organization interested in partnership, we're here to listen and collaborate.
               </p>
 

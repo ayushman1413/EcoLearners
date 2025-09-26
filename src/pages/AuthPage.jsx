@@ -107,7 +107,7 @@ const AuthPage = () => {
               <Leaf className="w-8 h-8 text-primary" />
             </motion.div>
           </div>
-          <h2 className="text-3xl font-bold text-foreground">{isLogin ? "Welcome Back!" : "Join EcoLearn"}</h2>
+          <h2 className="text-3xl font-bold text-foreground">{isLogin ? "Welcome Back!" : "Join EcoLearners"}</h2>
           <p className="mt-2 text-muted-foreground">
             {isLogin ? "Sign in to continue your eco-learning journey" : "Start your environmental education adventure"}
           </p>

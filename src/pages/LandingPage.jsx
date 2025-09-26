@@ -68,7 +68,7 @@ const LandingPage = () => {
                 Learn. Act. <span className="text-primary">Save the Planet</span>
               </motion.h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-                Join EcoLearn's gamified platform for environmental education. Make learning fun while building a
+                Join EcoLearners' gamified platform for environmental education. Make learning fun while building a
                 sustainable future together.
               </p>
             </motion.div>

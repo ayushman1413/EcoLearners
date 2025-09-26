@@ -78,7 +78,7 @@ const Layout = ({ children }) => {
               >
                 <Leaf className="w-5 h-5 text-primary-foreground" />
               </motion.div>
-              <span className="text-xl font-bold text-foreground">EcoLearn</span>
+              <span className="text-xl font-bold text-foreground">EcoLearners</span>
             </Link>
 
             {/* Navigation */}
@@ -249,7 +249,7 @@ const Layout = ({ children }) => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <Leaf className="w-5 h-5 text-primary" />
-              <span className="text-sm text-muted-foreground">EcoLearn - Learn. Act. Save the Planet.</span>
+              <span className="text-sm text-muted-foreground">EcoLearners - Learn. Act. Save the Planet.</span>
             </div>
             <div className="flex space-x-6 text-sm text-muted-foreground">
               <Link to="/about" className="hover:text-foreground transition-colors">
@@ -258,7 +258,7 @@ const Layout = ({ children }) => {
               <Link to="/contact" className="hover:text-foreground transition-colors">
                 Contact
               </Link>
-              <span>© 2025 EcoLearn</span>
+              <span>© 2025 EcoLearners</span>
             </div>
           </div>
         </div>

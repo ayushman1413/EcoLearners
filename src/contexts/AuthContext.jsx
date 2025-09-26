@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
       }
       setUser(mockUser)
       setIsAuthenticated(true)
-      localStorage.setItem("ecolearn_user", JSON.stringify(mockUser))
+      localStorage.setItem("ecolearners_user", JSON.stringify(mockUser))
       return { success: true }
     } else {
       return { success: false, error: "Invalid email or password" }
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
       const newUser = { email, password, role }
       const newUsers = [...users, newUser]
       setUsers(newUsers)
-      localStorage.setItem("ecolearn_users", JSON.stringify(newUsers))
+      localStorage.setItem("ecolearners_users", JSON.stringify(newUsers))
       // auto login
       return login(email, password, role)
     }
@@ -58,18 +58,18 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setUser(null)
     setIsAuthenticated(false)
-    localStorage.removeItem("ecolearn_user")
+    localStorage.removeItem("ecolearners_user")
   }
 
  
   React.useEffect(() => {
-    const savedUsers = localStorage.getItem("ecolearn_users")
+    const savedUsers = localStorage.getItem("ecolearners_users")
     if (savedUsers) {
       setUsers(JSON.parse(savedUsers))
     } else {
-      localStorage.setItem("ecolearn_users", JSON.stringify(users))
+      localStorage.setItem("ecolearners_users", JSON.stringify(users))
     }
-    const savedUser = localStorage.getItem("ecolearn_user")
+    const savedUser = localStorage.getItem("ecolearners_user")
     if (savedUser) {
       const userData = JSON.parse(savedUser)
       setUser(userData)

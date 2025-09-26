@@ -15,7 +15,7 @@ const HelpPage = () => {
             Help & Support
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Get the assistance you need to make the most of EcoLearn. Find answers to common questions and get in touch with our support team.
+            Get the assistance you need to make the most of EcoLearners. Find answers to common questions and get in touch with our support team.
           </p>
         </motion.div>
 
@@ -57,7 +57,7 @@ const HelpPage = () => {
                 <Mail className="w-5 h-5 text-muted-foreground" />
                 <div>
                   <p className="font-medium text-foreground">Email Support</p>
-                  <p className="text-muted-foreground">support@ecolearn.com</p>
+                  <p className="text-muted-foreground">support@ecolearners.com</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">

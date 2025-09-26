@@ -48,7 +48,7 @@ const TeacherDashboard = () => {
           <span className="text-white font-bold text-lg">E</span>
         </div>
         <div>
-          <h1 className="text-xl font-bold text-foreground">EcoLearn</h1>
+          <h1 className="text-xl font-bold text-foreground">EcoLearners</h1>
           <p className="text-sm text-muted-foreground">Teacher Portal</p>
         </div>
       </div>
