@@ -94,18 +94,16 @@ const TeacherDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="flex">
-        {/* Sidebar */}
-        <div className="w-80 bg-card border-r border-border min-h-screen sticky top-16">
-          <div className="p-6">
-            {sidebarContent}
-          </div>
+      {/* Sidebar */}
+      <div className="fixed left-0 top-16 w-80 bg-card border-r border-border z-40" style={{ height: 'calc(100vh - 4rem)' }}>
+        <div className="p-6">
+          {sidebarContent}
         </div>
+      </div>
 
-        {/* Main Content */}
-        <div className="flex-1 p-8">
-          {renderContent()}
-        </div>
+      {/* Main Content */}
+      <div className="ml-80 p-8">
+        {renderContent()}
       </div>
 
 
