@@ -66,21 +66,21 @@ const TeacherDashboard = () => {
         </div>
       </div>
       <div className="space-y-2 flex-1">
-        {menuItems.map((item) => {
+        {sidebarItems.map((item) => {
           const Icon = item.icon
           return (
-            <button
+            <Link
               key={item.id}
-              onClick={() => setActiveTab(item.id)}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
-                activeTab === item.id
-                  ? "bg-eco-leaf text-white"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+              to={item.path}
+              className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
+                isActive(item.path, item.exact)
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground hover:bg-accent"
               }`}
             >
               <Icon className="w-5 h-5" />
               <span className="font-medium">{item.label}</span>
-            </button>
+            </Link>
           )
         })}
       </div>
@@ -109,22 +109,63 @@ const TeacherDashboard = () => {
     <div className="min-h-screen bg-background">
       <div>
         {/* Mobile Hamburger Button */}
-        <button
-          onClick={toggleSidebar}
-          className="md:hidden fixed top-20 left-4 z-50 p-2 bg-card border border-border rounded-lg shadow-lg"
-          aria-label="Toggle sidebar"
-        >
-          {isSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {!isSidebarOpen && (
+          <button
+            onClick={toggleSidebar}
+            className="md:hidden fixed top-20 left-4 z-50 p-2 bg-card border border-border rounded-lg shadow-lg"
+            aria-label="Toggle sidebar"
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+        )}
 
         {/* Sidebar */}
         <div className={`fixed left-0 top-16 w-64 bg-card border-r border-border z-40 transition-transform duration-300 ease-in-out ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0`} style={{ height: 'calc(100vh - 4rem)' }}>
           <div className="p-6">
+            {/* Mobile Hamburger Button in Sidebar Header */}
+            <div className="md:hidden flex items-center justify-between mb-6">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-eco-leaf rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">E</span>
+                </div>
+                <div>
+                  <h1 className="text-xl font-bold text-foreground">EcoLearners</h1>
+                  <p className="text-sm text-muted-foreground">Teacher Portal</p>
+                </div>
+              </div>
+              <button
+                onClick={toggleSidebar}
+                className="p-2 bg-muted hover:bg-muted/80 rounded-lg transition-colors"
+                aria-label="Toggle sidebar"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Desktop Header */}
+            <div className="hidden md:flex items-center space-x-3 mb-8">
+              <div className="w-10 h-10 bg-eco-leaf rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">E</span>
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-foreground">EcoLearners</h1>
+                <p className="text-sm text-muted-foreground">Teacher Portal</p>
+              </div>
+            </div>
+
             {sidebarContent}
           </div>
         </div>
+
+        {/* Mobile Overlay */}
+        {isSidebarOpen && (
+          <div
+            className="md:hidden fixed inset-0 bg-black/50 z-30"
+            onClick={toggleSidebar}
+          />
+        )}
 
         {/* Main Content */}
         <div className={`p-8 transition-all duration-300 ease-in-out ${
