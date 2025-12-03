@@ -1,7 +1,7 @@
 "use client"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
-import { Leaf, User, LogOut, Sun, Moon, Search, Bell, ChevronDown } from "lucide-react"
+import { Leaf, User, LogOut, Sun, Moon, Search, Bell, ChevronDown, Menu, X } from "lucide-react"
 import { useAuth } from "../contexts/AuthContext"
 import { useState, useEffect } from "react"
 
@@ -123,7 +123,7 @@ const Layout = ({ children }) => {
               onClick={() => setShowMobileMenu(!showMobileMenu)}
               aria-label="Toggle mobile menu"
             >
-              <ChevronDown className={`w-5 h-5 transition-transform ${showMobileMenu ? 'rotate-180' : ''}`} />
+              <Menu className="w-5 h-5" />
             </button>
 
             {/* User Actions */}
@@ -284,7 +284,7 @@ const Layout = ({ children }) => {
                   className="p-2 rounded-lg hover:bg-muted transition-colors"
                   aria-label="Close mobile menu"
                 >
-                  <ChevronDown className="w-5 h-5 rotate-45" />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
 
