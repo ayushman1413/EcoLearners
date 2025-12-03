@@ -1,7 +1,8 @@
 "use client"
-import { useState } from "react"
-import { Home, Users, BookOpen, FileText, BarChart3, Settings, LogOut } from "lucide-react"
+import { Routes, Route, Link, useLocation } from "react-router-dom"
+import { Home, Users, BookOpen, FileText, BarChart3, Settings, LogOut, Menu, X } from "lucide-react"
 import { useAuth } from "../contexts/AuthContext"
+import { useState } from "react"
 import TeacherHome from "../components/teacher/TeacherHome"
 import TeacherStudents from "../components/teacher/TeacherStudents"
 import TeacherLessons from "../components/teacher/TeacherLessons"
@@ -13,28 +14,39 @@ const TeacherDashboard = () => {
   const [activeTab, setActiveTab] = useState("home")
   const { user, logout } = useAuth()
 
-  const menuItems = [
-    { id: "home", label: "Dashboard", icon: Home },
-    { id: "students", label: "Students", icon: Users },
-    { id: "lessons", label: "Lessons", icon: BookOpen },
-    { id: "quizzes", label: "Quizzes", icon: FileText },
-    { id: "analytics", label: "Analytics", icon: BarChart3 },
-    { id: "settings", label: "Settings", icon: Settings },
+  const sidebarItems = [
+    { path: "/teacher", id: "home", label: "Dashboard", icon: Home, exact: true },
+    { path: "/teacher/students", id: "students", label: "Students", icon: Users },
+    { path: "/teacher/lessons", id: "lessons", label: "Lessons", icon: BookOpen },
+    { path: "/teacher/quizzes", id: "quizzes", label: "Quizzes", icon: FileText },
+    { path: "/teacher/analytics", id: "analytics", label: "Analytics", icon: BarChart3 },
+    { path: "/teacher/settings", id: "settings", label: "Settings", icon: Settings },
   ]
 
+  const isActive = (path, exact = false) => {
+    if (exact) {
+      return location.pathname === path
+    }
+    return location.pathname.startsWith(path)
+  }
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
+  }
+
   const renderContent = () => {
-    switch (activeTab) {
-      case "home":
+    switch (location.pathname) {
+      case "/teacher":
         return <TeacherHome />
-      case "students":
+      case "/teacher/students":
         return <TeacherStudents />
-      case "lessons":
+      case "/teacher/lessons":
         return <TeacherLessons />
-      case "quizzes":
+      case "/teacher/quizzes":
         return <TeacherQuizzes />
-      case "analytics":
+      case "/teacher/analytics":
         return <TeacherAnalytics />
-      case "settings":
+      case "/teacher/settings":
         return <TeacherSettings />
       default:
         return <TeacherHome />
