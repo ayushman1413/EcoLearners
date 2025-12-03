@@ -91,8 +91,8 @@ const TeacherHome = () => {
     <div className="space-y-8">
       {/* Header */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <h1 className="text-3xl font-bold text-foreground mb-2">Teacher Dashboard</h1>
-        <p className="text-muted-foreground">Welcome back! Here's what's happening with your students today.</p>
+        <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Teacher Dashboard</h1>
+        <p className="text-sm md:text-base text-muted-foreground">Welcome back! Here's what's happening with your students today.</p>
       </motion.div>
 
       {/* Stats Grid */}
@@ -110,7 +110,7 @@ const TeacherHome = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              className="eco-card p-6"
+              className="eco-card p-4 md:p-6"
             >
               <div className="flex items-center justify-between mb-4">
                 <div className={`w-12 h-12 bg-${stat.color}/10 rounded-lg flex items-center justify-center`}>
@@ -194,7 +194,7 @@ const TeacherHome = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                className="eco-card p-4"
+                className="eco-card p-3 md:p-4"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
