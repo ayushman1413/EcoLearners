@@ -1,7 +1,8 @@
 "use client"
 import { Routes, Route, Link, useLocation } from "react-router-dom"
-import { Home, BookOpen, Brain, Leaf, FileText, Award, User } from "lucide-react"
+import { Home, BookOpen, Brain, Leaf, FileText, Award, User, Menu, X } from "lucide-react"
 import { useAuth } from "../contexts/AuthContext"
+import { useState } from "react"
 
 
 import StudentHome from "../components/student/StudentHome"
@@ -14,6 +15,7 @@ import StudentBadges from "../components/student/StudentBadges"
 const StudentDashboard = () => {
   const { user } = useAuth()
   const location = useLocation()
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   const sidebarItems = [
     { path: "/student", icon: Home, label: "Home", exact: true },
@@ -31,11 +33,26 @@ const StudentDashboard = () => {
     return location.pathname.startsWith(path)
   }
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div>
+        {/* Mobile Hamburger Button */}
+        <button
+          onClick={toggleSidebar}
+          className="md:hidden fixed top-20 left-4 z-50 p-2 bg-card border border-border rounded-lg shadow-lg"
+          aria-label="Toggle sidebar"
+        >
+          {isSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
         {/* Sidebar */}
-        <div className="fixed left-0 top-16 w-64 bg-card border-r border-border z-40" style={{ height: 'calc(100vh - 4rem)' }}>
+        <div className={`fixed left-0 top-16 w-64 bg-card border-r border-border z-40 transition-transform duration-300 ease-in-out ${
+          isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+        } md:translate-x-0`} style={{ height: 'calc(100vh - 4rem)' }}>
           <div className="p-6">
             {/* User Info */}
             <div className="flex items-center space-x-3 mb-8">
@@ -80,7 +97,9 @@ const StudentDashboard = () => {
         </div>
 
         {/* Main Content */}
-        <div className="ml-64 p-8">
+        <div className={`p-8 transition-all duration-300 ease-in-out ${
+          isSidebarOpen ? 'ml-64' : 'ml-0'
+        } md:ml-64`}>
           <Routes>
             <Route path="/" element={<StudentHome />} />
             <Route path="/lessons" element={<StudentLessons />} />
