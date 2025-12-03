@@ -11,7 +11,8 @@ import TeacherAnalytics from "../components/teacher/TeacherAnalytics"
 import TeacherSettings from "../components/teacher/TeacherSettings"
 
 const TeacherDashboard = () => {
-  const [activeTab, setActiveTab] = useState("home")
+  const location = useLocation()
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const { user, logout } = useAuth()
 
   const sidebarItems = [
@@ -106,23 +107,39 @@ const TeacherDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Sidebar */}
-      <div className="fixed left-0 top-16 w-80 bg-card border-r border-border z-40" style={{ height: 'calc(100vh - 4rem)' }}>
-        <div className="p-6">
-          {sidebarContent}
+      <div>
+        {/* Mobile Hamburger Button */}
+        <button
+          onClick={toggleSidebar}
+          className="md:hidden fixed top-20 left-4 z-50 p-2 bg-card border border-border rounded-lg shadow-lg"
+          aria-label="Toggle sidebar"
+        >
+          {isSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
+        {/* Sidebar */}
+        <div className={`fixed left-0 top-16 w-64 bg-card border-r border-border z-40 transition-transform duration-300 ease-in-out ${
+          isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+        } md:translate-x-0`} style={{ height: 'calc(100vh - 4rem)' }}>
+          <div className="p-6">
+            {sidebarContent}
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className={`p-8 transition-all duration-300 ease-in-out ${
+          isSidebarOpen ? 'ml-64' : 'ml-0'
+        } md:ml-64`}>
+          <Routes>
+            <Route path="/" element={<TeacherHome />} />
+            <Route path="/students" element={<TeacherStudents />} />
+            <Route path="/lessons" element={<TeacherLessons />} />
+            <Route path="/quizzes" element={<TeacherQuizzes />} />
+            <Route path="/analytics" element={<TeacherAnalytics />} />
+            <Route path="/settings" element={<TeacherSettings />} />
+          </Routes>
         </div>
       </div>
-
-      {/* Main Content */}
-      <div className="ml-80 p-8">
-        {renderContent()}
-      </div>
-
-
-
-
-
-
     </div>
   )
 }
