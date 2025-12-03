@@ -254,7 +254,7 @@ const StudentHome = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="eco-card p-6"
+            className="eco-card p-4 md:p-6"
           >
             <div className="flex items-center justify-between mb-4">
               <div className={`w-12 h-12 ${stat.bgColor} rounded-lg flex items-center justify-center`}>
@@ -348,7 +348,7 @@ const StudentHome = () => {
           >
             <div className="flex items-center space-x-3">
               <BookOpen className="w-6 h-6 text-eco-leaf" />
-              <span className="font-medium text-foreground">Continue Learning</span>
+              <span className="font-medium text-sm md:text-base text-foreground">Continue Learning</span>
             </div>
             <ArrowRight className="w-4 h-4 text-eco-leaf group-hover:translate-x-1 transition-transform" />
           </Link>
@@ -358,7 +358,7 @@ const StudentHome = () => {
           >
             <div className="flex items-center space-x-3">
               <Brain className="w-6 h-6 text-eco-sky" />
-              <span className="font-medium text-foreground">Take Quiz</span>
+              <span className="font-medium text-sm md:text-base text-foreground">Take Quiz</span>
             </div>
             <ArrowRight className="w-4 h-4 text-eco-sky group-hover:translate-x-1 transition-transform" />
           </Link>
@@ -555,7 +555,7 @@ const StudentHome = () => {
             <input
               type="email"
               placeholder="Your email"
-              className="w-full px-3 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+              className="w-full px-3 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
               required
             />
             <motion.button

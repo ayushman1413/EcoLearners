@@ -1,14 +1,21 @@
-# TODO: Change "ecolearn" to "Ecolearners"
+# Mobile View Optimization for Student Section
 
-- [x] Edit package.json: Change "name": "ecolearn" to "ecolearners"
-- [x] Edit src/contexts/AuthContext.jsx: Change localStorage keys "ecolearn_user" to "ecolearners_user" and "ecolearn_users" to "ecolearners_users"
-- [x] Edit src/components/Layout.jsx: Change "EcoLearn" to "EcoLearners" in logo, footer tagline, and copyright
-- [x] Edit src/pages/AuthPage.jsx: Change "Join EcoLearn" to "Join EcoLearners"
-- [x] Edit src/pages/AboutPage.jsx: Change "About EcoLearn", "EcoLearn was born", "EcoLearn is proudly" to "EcoLearners"
-- [x] Edit src/pages/LandingPage.jsx: Change "Join EcoLearn's" to "Join EcoLearners'"
-- [x] Edit src/pages/ContactPage.jsx: Change "integrate EcoLearn" to "integrate EcoLearners"
-- [x] Edit src/pages/TeacherDashboard.jsx: Change "EcoLearn" to "EcoLearners" in header and portal text
-- [x] Edit src/pages/HelpPage.jsx: Change "make the most of EcoLearn" to "make the most of EcoLearners" and "support@ecolearn.com" to "support@ecolearners.com"
-- [x] Edit src/components/student/StudentHome.jsx: Change "EcoLearn made" to "EcoLearners made"
-- [x] Run npm install to update package-lock.json
-- [ ] Test the app to ensure localStorage keys work with new names
+## Tasks to Complete
+
+### StudentEcoActions.jsx
+- [x] Adjust responsive text sizes for mobile (e.g., headers, descriptions)
+- [x] Optimize padding and margins for mobile devices (reduce gaps where necessary)
+- [ ] Ensure form elements are touch-friendly and properly sized
+- [ ] Improve mobile layout for stats cards and recent actions list
+
+### StudentHome.jsx
+- [ ] Review and adjust responsive text classes throughout the component
+- [ ] Optimize grid layouts for better mobile stacking and spacing
+- [ ] Ensure no horizontal overflow in sections like Daily Rewards and Learning Journey
+- [x] Adjust padding, margins, and gaps for mobile screens
+- [ ] Verify touch-friendly buttons and interactive elements
+
+### Testing and Verification
+- [ ] Test changes on mobile view simulation
+- [ ] Ensure all sections display correctly on small screens
+- [ ] Verify readability and usability on mobile devices

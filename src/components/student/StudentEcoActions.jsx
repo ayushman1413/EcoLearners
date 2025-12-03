@@ -86,11 +86,11 @@ const StudentEcoActions = () => {
   ]
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 md:space-y-8">
       {/* Header */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <h1 className="text-3xl font-bold text-foreground mb-2">Eco-Actions</h1>
-        <p className="text-muted-foreground">Take real-world environmental actions and share your impact</p>
+        <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Eco-Actions</h1>
+        <p className="text-sm md:text-base text-muted-foreground">Take real-world environmental actions and share your impact</p>
       </motion.div>
 
       {/* Stats */}
@@ -100,21 +100,21 @@ const StudentEcoActions = () => {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="grid grid-cols-1 md:grid-cols-3 gap-6"
       >
-        <div className="eco-card p-6 text-center">
+        <div className="eco-card p-4 md:p-6 text-center">
           <div className="w-12 h-12 bg-eco-leaf/10 rounded-lg flex items-center justify-center mx-auto mb-3">
             <CheckCircle className="w-6 h-6 text-eco-leaf" />
           </div>
           <p className="text-2xl font-bold text-foreground">5</p>
           <p className="text-sm text-muted-foreground">Actions Completed</p>
         </div>
-        <div className="eco-card p-6 text-center">
+        <div className="eco-card p-4 md:p-6 text-center">
           <div className="w-12 h-12 bg-eco-sun/10 rounded-lg flex items-center justify-center mx-auto mb-3">
             <Award className="w-6 h-6 text-eco-sun" />
           </div>
           <p className="text-2xl font-bold text-foreground">155</p>
           <p className="text-sm text-muted-foreground">Points Earned</p>
         </div>
-        <div className="eco-card p-6 text-center">
+        <div className="eco-card p-4 md:p-6 text-center">
           <div className="w-12 h-12 bg-eco-sky/10 rounded-lg flex items-center justify-center mx-auto mb-3">
             <Clock className="w-6 h-6 text-eco-sky" />
           </div>
@@ -129,7 +129,7 @@ const StudentEcoActions = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="eco-card p-6"
+          className="eco-card p-4 md:p-6"
         >
           <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center">
             <Leaf className="w-5 h-5 mr-2 text-primary" />
@@ -149,7 +149,7 @@ const StudentEcoActions = () => {
                   value={formData.title}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
+                  className="w-full px-4 py-3 md:py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors text-base"
                   placeholder="What environmental action did you take?"
                 />
               </div>
@@ -174,7 +174,7 @@ const StudentEcoActions = () => {
                 <label htmlFor="image" className="block text-sm font-medium text-foreground mb-2">
                   Photo Evidence (Optional)
                 </label>
-                <div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
+                <div className="border-2 border-dashed border-border rounded-lg p-4 md:p-6 text-center">
                   <input type="file" id="image" accept="image/*" onChange={handleImageUpload} className="hidden" />
                   <label htmlFor="image" className="cursor-pointer">
                     <div className="w-12 h-12 bg-muted/50 rounded-lg flex items-center justify-center mx-auto mb-2">
@@ -194,7 +194,7 @@ const StudentEcoActions = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full eco-button flex items-center justify-center space-x-2 disabled:opacity-50"
+                className="w-full eco-button flex items-center justify-center space-x-2 disabled:opacity-50 min-h-[44px] text-base"
               >
                 {isSubmitting ? (
                   <motion.div
@@ -266,7 +266,7 @@ const StudentEcoActions = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="eco-card p-6"
+        className="eco-card p-4 md:p-6"
       >
         <h2 className="text-xl font-semibold text-foreground mb-4">Your Recent Actions</h2>
         <div className="space-y-4">
