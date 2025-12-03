@@ -33,7 +33,6 @@ const StudentEcoActions = () => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Mock submission
     setTimeout(() => {
       setIsSubmitting(false)
       setSubmitted(true)
