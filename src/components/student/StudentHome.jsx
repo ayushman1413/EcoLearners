@@ -235,7 +235,7 @@ const StudentHome = () => {
         className="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
       >
         <div className="flex-1">
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Welcome back, {user?.name}!</h1>
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-2">Welcome back, {user?.name}!</h1>
           <p className="text-sm md:text-base text-muted-foreground">Ready to continue your eco-learning journey?</p>
         </div>
         <div className="flex-shrink-0">
@@ -272,24 +272,24 @@ const StudentHome = () => {
         ))}
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+      <div className="grid md:grid-cols-2 gap-4 md:gap-8">
         {/* Recent Activities */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="eco-card p-4 md:p-6"
+          className="eco-card p-3 md:p-6"
         >
-          <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center">
-            <Clock className="w-5 h-5 mr-2 text-primary" />
+          <h2 className="text-lg md:text-xl font-semibold text-foreground mb-3 md:mb-4 flex items-center">
+            <Clock className="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary" />
             Recent Activities
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {recentActivities.map((activity, index) => (
-              <div key={index} className="flex items-start space-x-3 p-3 bg-muted/50 rounded-lg">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-foreground">{activity.title}</p>
+              <div key={index} className="flex items-start space-x-2 md:space-x-3 p-2 md:p-3 bg-muted/50 rounded-lg">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs md:text-sm font-medium text-foreground">{activity.title}</p>
                   <div className="flex items-center justify-between mt-1">
                     <p className="text-xs text-muted-foreground">{activity.time}</p>
                     <span className="text-xs text-primary font-medium">{activity.points}</span>
@@ -305,21 +305,21 @@ const StudentHome = () => {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="eco-card p-4 md:p-6"
+          className="eco-card p-3 md:p-6"
         >
-          <h2 className="text-lg md:text-xl font-semibold text-foreground mb-4 flex items-center">
-            <Target className="w-5 h-5 mr-2 text-primary" />
+          <h2 className="text-base md:text-lg lg:text-xl font-semibold text-foreground mb-3 md:mb-4 flex items-center">
+            <Target className="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary" />
             Upcoming Tasks
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {upcomingTasks.map((task, index) => (
-              <div key={index} className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-foreground">{task.title}</p>
+              <div key={index} className="flex items-center justify-between p-2 md:p-3 bg-muted/50 rounded-lg">
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs md:text-sm font-medium text-foreground">{task.title}</p>
                   <p className="text-xs text-muted-foreground mt-1">{task.dueDate}</p>
                 </div>
                 <div
-                  className={`w-3 h-3 rounded-full ${
+                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full flex-shrink-0 ${
                     task.priority === "high"
                       ? "bg-destructive"
                       : task.priority === "medium"
@@ -480,27 +480,27 @@ const StudentHome = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.0 }}
-        className="eco-card p-4 md:p-6"
+        className="eco-card p-3 md:p-6"
       >
-        <h2 className="text-lg md:text-xl font-semibold text-foreground mb-4 flex items-center">
-          <Users className="w-5 h-5 mr-2 text-primary" />
+        <h2 className="text-base md:text-lg lg:text-xl font-semibold text-foreground mb-3 md:mb-4 flex items-center">
+          <Users className="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary" />
           Community Highlights
         </h2>
-        <div className="grid gap-4 md:gap-6">
+        <div className="grid gap-3 md:gap-6">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="p-3 md:p-4 bg-muted/50 rounded-lg">
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-8 h-8 md:w-10 md:h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+            <div key={index} className="p-2 md:p-4 bg-muted/50 rounded-lg">
+              <div className="flex items-center space-x-2 md:space-x-3 mb-2 md:mb-3">
+                <div className="w-7 h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-primary font-semibold text-xs md:text-sm">{testimonial.avatar}</span>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h4 className="text-sm md:text-base font-semibold text-foreground truncate">{testimonial.name}</h4>
+                  <h4 className="text-xs md:text-sm lg:text-base font-semibold text-foreground truncate">{testimonial.name}</h4>
                   <p className="text-xs text-muted-foreground">{testimonial.role}</p>
                 </div>
               </div>
-              <div className="flex mb-2">
+              <div className="flex mb-1 md:mb-2">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 text-yellow-400 fill-current" />
+                  <Star key={i} className="w-2.5 h-2.5 md:w-3 md:h-3 text-yellow-400 fill-current" />
                 ))}
               </div>
               <p className="text-xs md:text-sm text-muted-foreground italic">"{testimonial.content}"</p>

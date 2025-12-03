@@ -13,6 +13,7 @@ const Layout = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("")
   const [showNotifications, setShowNotifications] = useState(false)
   const [showProfileMenu, setShowProfileMenu] = useState(false)
+  const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
@@ -119,10 +120,10 @@ const Layout = ({ children }) => {
             {/* Mobile Menu Button */}
             <button
               className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
-              onClick={() => setShowProfileMenu(!showProfileMenu)}
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
               aria-label="Toggle mobile menu"
             >
-              <ChevronDown className={`w-5 h-5 transition-transform ${showProfileMenu ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`w-5 h-5 transition-transform ${showMobileMenu ? 'rotate-180' : ''}`} />
             </button>
 
             {/* User Actions */}
@@ -248,6 +249,144 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </header>
+
+      {/* Mobile Menu Overlay */}
+      {showMobileMenu && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/50 z-50 md:hidden"
+          onClick={() => setShowMobileMenu(false)}
+        >
+          <motion.div
+            initial={{ x: '-100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '-100%' }}
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="fixed left-0 top-16 w-80 max-w-[85vw] h-full bg-card border-r border-border shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center space-x-2">
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                    className="w-8 h-8 bg-primary rounded-full flex items-center justify-center"
+                  >
+                    <Leaf className="w-5 h-5 text-primary-foreground" />
+                  </motion.div>
+                  <span className="text-xl font-bold text-foreground">EcoLearners</span>
+                </div>
+                <button
+                  onClick={() => setShowMobileMenu(false)}
+                  className="p-2 rounded-lg hover:bg-muted transition-colors"
+                  aria-label="Close mobile menu"
+                >
+                  <ChevronDown className="w-5 h-5 rotate-45" />
+                </button>
+              </div>
+
+              {/* Mobile Navigation */}
+              <nav className="space-y-4">
+                {!isAuthenticated ? (
+                  <>
+                    <Link
+                      to="/"
+                      className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                      onClick={() => setShowMobileMenu(false)}
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      to="/about"
+                      className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                      onClick={() => setShowMobileMenu(false)}
+                    >
+                      About
+                    </Link>
+                    <Link
+                      to="/contact"
+                      className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                      onClick={() => setShowMobileMenu(false)}
+                    >
+                      Contact
+                    </Link>
+                    <Link
+                      to="/help"
+                      className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                      onClick={() => setShowMobileMenu(false)}
+                    >
+                      Help
+                    </Link>
+                    <div className="pt-4 border-t border-border">
+                      <Link
+                        to="/auth"
+                        className="block w-full eco-button text-center mb-3"
+                        onClick={() => setShowMobileMenu(false)}
+                      >
+                        Get Started
+                      </Link>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      to={user?.role === "student" ? "/student" : "/teacher"}
+                      className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                      onClick={() => setShowMobileMenu(false)}
+                    >
+                      Dashboard
+                    </Link>
+                    <Link
+                      to="/leaderboard"
+                      className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                      onClick={() => setShowMobileMenu(false)}
+                    >
+                      Leaderboard
+                    </Link>
+                    <Link
+                      to="/help"
+                      className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                      onClick={() => setShowMobileMenu(false)}
+                    >
+                      Help
+                    </Link>
+                    <div className="pt-4 border-t border-border">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                          <User className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">{user?.name}</p>
+                          <p className="text-sm text-muted-foreground capitalize">{user?.role}</p>
+                        </div>
+                      </div>
+                      <Link
+                        to="/settings"
+                        className="block w-full px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors mb-2"
+                        onClick={() => setShowMobileMenu(false)}
+                      >
+                        Settings
+                      </Link>
+                      <button
+                        onClick={() => {
+                          setShowMobileMenu(false)
+                          logout()
+                        }}
+                        className="block w-full px-4 py-2 text-destructive hover:bg-destructive/10 rounded-lg transition-colors text-left"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  </>
+                )}
+              </nav>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
 
       {/* Main Content */}
       <main className="flex-1">{children}</main>
