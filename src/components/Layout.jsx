@@ -116,6 +116,15 @@ const Layout = ({ children }) => {
               )}
             </nav>
 
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+              onClick={() => setShowProfileMenu(!showProfileMenu)}
+              aria-label="Toggle mobile menu"
+            >
+              <ChevronDown className={`w-5 h-5 transition-transform ${showProfileMenu ? 'rotate-180' : ''}`} />
+            </button>
+
             {/* User Actions */}
             <div className="flex items-center space-x-4">
               <button
