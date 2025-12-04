@@ -82,7 +82,6 @@ const AuthPage = () => {
     setIsLoading(false)
   }
 
-
   
 
 
