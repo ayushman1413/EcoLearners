@@ -84,6 +84,8 @@ const AuthPage = () => {
 
 
   
+
+
   const toggleAuthMode = () => {
     setIsLogin(!isLogin)
     setFormData({ email: "", password: "", confirmPassword: "" })
