@@ -283,7 +283,6 @@ const AuthPage = () => {
         </motion.div>
 
 
-
         {/* Demo Credentials */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
