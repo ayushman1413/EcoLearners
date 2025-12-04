@@ -82,6 +82,8 @@ const AuthPage = () => {
     setIsLoading(false)
   }
 
+
+  
   const toggleAuthMode = () => {
     setIsLogin(!isLogin)
     setFormData({ email: "", password: "", confirmPassword: "" })
@@ -283,7 +285,7 @@ const AuthPage = () => {
         </motion.div>
 
 
-        
+
 
         {/* Demo Credentials */}
         <motion.div
